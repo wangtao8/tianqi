@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<scroll-view class="scroll-view_H" enable-back-to-top scroll-y style="width: 100%;height:100%;" bindscroll="scroll">
+  <view class='search' style='opacity:{{opacity}}'>
+    <input type='text' placeholder='定位不准？来输入城市名吧！' bindblur="search" bindinput='cha' value='{{inputVal}}' focus='{{focu}}'/>
+    <image src='/cond_icon/cha.png' class='cha' wx:if="{{cha}}" bindtap='delete'/>
+    <span bindtap='onSearch'>搜索</span>
+  </view>
+  <view class='dizhi'>{{qiwen.data.HeWeather6[0].basic.admin_area}}.{{qiwen.data.HeWeather6[0].basic.parent_city}}.{{qiwen.data.HeWeather6[0].basic.location}}</view>  
+  <view>今日#92油价：{{youjia}}元/升</view>
+  <view>更新时间：{{qiwen.data.HeWeather6[0].update.loc}}</view>
+  <view wx:for="{{qiwen.data.HeWeather6[0].daily_forecast}}" wx:key="{{index}}" class='content'>
+    <view style="width:100px;height:100px;margin:0 auto;background-image:url(https://cdn.heweather.com/cond_icon/{{item.cond_code_d}}.png);"></view>
+    <view class='everyDay'>
+      <view>时间：{{item.date}}</view>
+      <view>白天气候：{{item.cond_txt_d}}<span wx:if="{{index==0}}">(实时)</span></view>
+      <view>夜间气候：{{item.cond_txt_n}}</view>
+      <view>
+        <span class="minTmp">{{item.tmp_min}}℃</span>
+        ~
+        <span>{{item.tmp_max}}℃</span>
+      </view>
+      <view>空气湿度: {{item.hum}}</view>
+      <view>{{item.wind_dir}}</view>
+    </view>
+  </view>
+  <view style='padding:0 50px'>
+    <view class='weilai'>未来三天生活指数：</view>
+    <view wx:for="{{lifestyle}}" wx:key="{{index}}" class="zhishu">
+      <view style='margin-top:20px;'>
+        {{lifeZs[item.type]}}:
+        <view>舒适度:{{item.brf}}</view>
+        <view>建议:{{item.txt}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
