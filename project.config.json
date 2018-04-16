@@ -28,10 +28,5 @@
       "current": -1,
       "list": []
     }
-  },
-  "client": "./client",
-  "svr": "./server",
-  "miniprogramRoot": "./client",
-  "qcloudRoot": "./server",
-  "appid": "wx97b277a1b249d245"
+  }
 }
