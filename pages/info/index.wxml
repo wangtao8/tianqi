@@ -1,0 +1,4 @@
+<!--pages/info/index.wxml-->
+<view>
+  <view bindtap="bindViewTap">hahha</view>
+</view>

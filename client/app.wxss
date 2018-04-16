@@ -1,0 +1,13 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+.scroll-view_H{
+  /* background: -webkit-linear-gradient(left top, #ffffff , #7a7070);
+  background: linear-gradient(to bottom right,   #ffffff , #7a7070);  */
+  background-image: url('http://big5.wallcoo.com/cartoon/Scrapbook_Art_Paper_Xmas/images/Christmas_Paper21.jpg');
+  box-sizing: border-box;
+}
