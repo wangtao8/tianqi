@@ -1,1 +1,6 @@
 /* pages/info/index.wxss */
+.container>canvas{
+  width: 320px;
+  height: 400px;
+  margin-top: 50px;
+}

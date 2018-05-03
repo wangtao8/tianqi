@@ -5,8 +5,12 @@
     <image src='/cond_icon/cha.png' class='cha' wx:if="{{cha}}" bindtap='delete'/>
     <span bindtap='onSearch'>搜索</span>
   </view>
+  <navigator class='userInfo' style='opacity:{{opacity}};' url='/pages/info/index'>
+    <image src='{{userInfo.avatarUrl}}' class='avatarUrl'></image>
+    <view class='userName'>欢迎您:{{userInfo.nickName}}</view>
+  </navigator>
   <view class='dizhi'>{{qiwen.data.HeWeather6[0].basic.admin_area}}.{{qiwen.data.HeWeather6[0].basic.parent_city}}.{{qiwen.data.HeWeather6[0].basic.location}}</view>  
-  <view>今日#92油价：{{youjia}}元/升</view>
+  <view bindtap='searchYj'>今日#92油价：<span wx:if="{{isSearch === 1}}">点击查询</span><span wx:else>{{youjia}}</span></view>
   <view>更新时间：{{qiwen.data.HeWeather6[0].update.loc}}</view>
   <view wx:for="{{qiwen.data.HeWeather6[0].daily_forecast}}" wx:key="{{index}}" class='content'>
     <view style="width:100px;height:100px;margin:0 auto;background-image:url(https://cdn.heweather.com/cond_icon/{{item.cond_code_d}}.png);"></view>
@@ -33,4 +37,14 @@
       </view>
     </view>
   </view>
+  <!-- <view>
+      <view wx:for="{{runData}}" wx:key="{{index}}">
+          <view>
+              日期:{{ item.timestamp }}
+          </view>
+          <view>
+              步数:{{item.step}}
+          </view>
+      </view>
+  </view> -->
 </scroll-view>

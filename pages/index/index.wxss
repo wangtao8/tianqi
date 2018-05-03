@@ -54,7 +54,6 @@ page{
   font-size: 32px;
   color: rgb(26,173,25);
   text-shadow:1px 1px rgba(155,55,55,.8);
-  margin-top: 100px;
 }
 .minTmp{
   font-size:24px;
@@ -81,4 +80,37 @@ page{
   margin-top: 0px;
   width: 250px;
   margin: 0 auto;
+}
+.userInfo{
+  margin-top: 100px;
+  color: #ec760c;
+}
+.userInfo,.userInfo:hover,.userInfo:active,.userInfo:visited,.userInfo:link,.userInfo:focus{
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.avatarUrl{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  position: relative;
+  animation: spin 5s 1 cubic-bezier(0.14, 0.25, 0, 1.18) forwards;
+  animation-delay:0.3s;
+}
+.userName{
+    background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    animation: masked-animation 4s infinite linear;
+    animation-duration: alternate;
+  }
+@keyframes masked-animation {
+  0%{ background-position: 0 0;}
+  100% { background-position: -100% 0;}
+}
+@keyframes spin {
+  0%  { transform: rotate(0deg) scale(0.5); left: -150px;border-radius: 0px;}
+  100%  { transform: rotate(360deg) scale(1); left: 0px;border-radius: 50px;}
 }

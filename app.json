@@ -1,12 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/info/index"
+  	"pages/info/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "天气预报防雷版",
+    "navigationBarTitleText": "天气预报尊享版",
     "navigationBarTextStyle": "black"
   }
 }
