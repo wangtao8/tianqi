@@ -2,8 +2,7 @@
  * Created by rd on 2017/5/4.
  */
 // 引入CryptoJS
-var Crypto = require('cryptojs/cryptojs.js').Crypto;
-var app = getApp();
+var Crypto = require('./cryptojs/cryptojs.js').Crypto;
 
 function RdWXBizDataCrypt(appId, sessionKey) {
   this.appId = appId
@@ -12,6 +11,7 @@ function RdWXBizDataCrypt(appId, sessionKey) {
 
 RdWXBizDataCrypt.prototype.decryptData = function (encryptedData, iv) {
   // base64 decode ：使用 CryptoJS 中 Crypto.util.base64ToBytes()进行 base64解码
+  console.log('333')
   var encryptedData = Crypto.util.base64ToBytes(encryptedData)
   var key = Crypto.util.base64ToBytes(this.sessionKey);
   var iv = Crypto.util.base64ToBytes(iv);
